@@ -21,6 +21,7 @@ git remote add origin XXXXXX
 使用 git pull --rebase origin master 
 
 
+
 3. 新建django框架后 添加app 在命令行中输入
 
 python manage.py startapp users
@@ -28,48 +29,37 @@ python manage.py startapp users
 在setting的INSTALLED_APPS = [] 添加新建的app名字
 
 
+
 4. 连接MySQL数据库
-
+```
 DATABASES = {
-
     'default': {
-
-        'ENGINE': 'django.db.backends.mysql'
-        ,
+        'ENGINE': 'django.db.backends.mysql',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-
         'NAME': 'GradeSystem',
-
         'USER': 'root',
-
         'PASSWORD': 'root.',
-
         'HOST': '127.0.0.1',
-
         'PORT': '3306',
-
     }
-
 }
-
+```
 
 
 django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module.错误
 
 在init添加
-
+```
 import pymysql
 
 pymysql.install_as_MySQLdb()
-
-
+```
+```
 django.core.exceptions.ImproperlyConfigured: mysqlclient 1.3.13 or newer is required; you have 0.9.3.
-
 Python36-32\Lib\site-packages\django\db\backends\mysql\base.py下的 
  if version < (1, 3, 13):
-
      raise ImproperlyConfigured('mysqlclient 1.3.13 or newer is required; you have %s.' % Database.__version__)
-
+```
 注释掉
 
 
@@ -79,6 +69,8 @@ AttributeError: 'str' object has no attribute 'decode'错误
 同上的operations.py 的decode改成encode
 
 python manage.py makemigrations  与 python manage.py migrate 对数据库进行操作。
+
+******
 
 ***2019/07/02***
 todo：建立user表以及实现登录注册
