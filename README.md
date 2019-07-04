@@ -1,5 +1,27 @@
 # GradeSystem
 
+jetbrain 快捷键：
+
+ctrl + c 复制当前行
+
+ctrl + x 剪切当前行
+
+ctrl + tab 切换窗口
+
+ctrl + home 光标定义到文件开头
+
+ctrl + end 光标定义到文件结尾
+
+ctrl + left/right 一个单词一个单词的转跳
+
+ctrl + a 全选
+
+ctrl + alt + l 格化选中内容
+
+ctrl + l 注释选中内同
+
+ctrl + y 快速删除一行
+
 **笔记**
 ***2019/7/1***
 
@@ -16,7 +38,7 @@ git remote add origin XXXXXX
 
 2. git新建项目时因为有readme导致git pull不成功，出现错误的主要原因是github
 
-中的README.md文件不在本地代码目录中【注：pull=fetch+merge]
+中的README.md文件不在本地代码目录中[：pull=fetch+merge]
 
 使用 git pull --rebase origin master 
 
@@ -72,6 +94,19 @@ python manage.py makemigrations  与 python manage.py migrate 对数据库进行
 
 ******
 
-***2019/07/02***
-todo：建立user表以及实现登录注册
+***2019/07/03***
+1. 迭代器
+当创建一个列表后,你就可以一个接着一个地读取它的元素, 这种操作就叫做迭代(iteration):
 
+2. 生成器
+除了把[]换成()之外，生成器看起来和列表推导式没有什么不同。但是，调用之后，你不能再次使用for i in mygenerator，因为生成器只可以被迭代一次：它计算出0，然后计算出1，同时丢弃掉0，然后最终计算出4，丢弃掉1，一个接着一个。
+
+计算空间的时候，迭代器存储生成的全部元素，但是生成器就只存储地址，在要使用数据的时候才加以生成相应的元素
+
+yield关键字
+
+yield是一个类似与return的关键字，只是这个函数会返回的是一个生成器（Generator）
+
+***2019/07/04***
+
+1.  列表为中括号[]，可修改内部元素，元组为小括号，不可修改内部元素，集合为大括号
